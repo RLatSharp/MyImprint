@@ -19,12 +19,32 @@
 
         Left_Parenth {
             bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <4 5>;
+            key-positions = <16 17>;
         };
 
         Right_Parenth {
             bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <7 6>;
+            key-positions = <18 19>;
+        };
+ 
+        Left_Curly {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <28 29>;
+        };
+
+        Right_Curly {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <30 31>;
+ 
+        };
+        Left_Bracket {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <40 41>;
+        };
+
+        Right_Bracket {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <42 43>;
         };
     };
 
@@ -32,7 +52,7 @@
         L_Ctrl: L_Ctrl {
             compatible = "zmk,behavior-hold-tap";
             label = "L_CTRL";
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp A>, <&kp LCTRL>;
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <25 34>;
