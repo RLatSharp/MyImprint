@@ -52,7 +52,7 @@
         L_Ctrl: L_Ctrl {
             compatible = "zmk,behavior-hold-tap";
             label = "L_CTRL";
-            bindings = <&kp A>, <&kp LCTRL>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <25>;
