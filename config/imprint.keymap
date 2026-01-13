@@ -89,7 +89,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             hold-trigger-key-positions = <28>;
         };
 
@@ -134,7 +134,7 @@
             #binding-cells = <2>;
             hold-trigger-key-positions = <31>;
             tapping-term-ms = <250>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
         };
 
         C_COPY: C_COPY {
@@ -161,6 +161,33 @@
             quick-tap-ms = <(-1)>;
             require-prior-idle-ms = <400>;
         };
+
+        SCREAMING_PERIOD: SCREAMING_PERIOD {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SCREAMING_PERIOD";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <45>;
+            tapping-term-ms = <250>;
+            flavor = "hold-preferred";
+        };
+
+        KEYBOARD_SETTINGS: KEYBOARD_SETTINGS {
+            compatible = "zmk,behavior-tap-dance";
+            label = "KEYBOARD_SETTINGS";
+            #binding-cells = <0>;
+            bindings = <&mo 1>, <&tog 2>;
+        };
+    };
+
+    macros {
+        ALT_TAB: ALT_TAB {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp TAB>;
+            label = "ALT_TAB";
+        };
     };
 
     keymap {
@@ -168,25 +195,25 @@
 
         default_layer {
             bindings = <
-&kp EQUAL  &kp N1           &kp N2             &kp N3            &kp N4                 &kp N5                          &kp N6    &kp N7                  &kp N8             &kp N9              &kp N0                   &kp MINUS
-&kp TAB    &kp Q            &kp W              &kp E             &kp R                  &kp T                           &kp Y     &kp U                   &kp I              &kp O               &kp P                    &kp BSLH
-&kp ESC    &L_Ctrl LCTRL A  &L_ALT LEFT_ALT S  &L_OS LEFT_WIN D  &L_SHIFT LEFT_SHIFT F  &kp G                           &kp H     &R_SHIFT RIGHT_SHIFT J  &R_OS RIGHT_WIN K  &R_ALT RIGHT_ALT L  &R_CTRL RCTRL SEMICOLON  &kp SQT
-&kp LSHFT  &kp Z            &kp X              &C_COPY K_COPY C  &V_PASTE K_PASTE V     &kp B                           &kp N     &kp M                   &kp COMMA          &kp DOT             &kp FSLH                 &kp RSHFT
-                            &kp LEFT_ARROW     &kp RIGHT_ARROW                                                                                            &kp DOWN_ARROW     &kp UP_ARROW
-                                                                 &mkp LCLK              &mkp RCLK      &kp PAGE_UP      &kp HOME  &mkp LCLK               &mkp RCLK
-                                                                 &kp DEL                &kp BACKSPACE  &kp PAGE_DOWN    &kp END   &kp SPACE               &mo 1
+&kp EQUAL  &kp N1           &kp N2             &kp N3            &kp N4                 &kp N5                               &kp N6    &kp N7                  &kp N8             &kp N9                                &kp N0                   &kp MINUS
+&kp TAB    &kp Q            &kp W              &kp E             &kp R                  &kp T                                &kp Y     &kp U                   &kp I              &kp O                                 &kp P                    &kp BSLH
+&kp ESC    &L_Ctrl LCTRL A  &L_ALT LEFT_ALT S  &L_OS LEFT_WIN D  &L_SHIFT LEFT_SHIFT F  &kp G                                &kp H     &R_SHIFT RIGHT_SHIFT J  &R_OS RIGHT_WIN K  &R_ALT RIGHT_ALT L                    &R_CTRL RCTRL SEMICOLON  &kp SQT
+&kp LSHFT  &kp Z            &kp X              &C_COPY K_COPY C  &V_PASTE K_PASTE V     &kp B                                &kp N     &kp M                   &kp COMMA          &SCREAMING_PERIOD EXCLAMATION PERIOD  &kp FSLH                 &kp RSHFT
+                            &kp LEFT_ARROW     &kp RIGHT_ARROW                                                                                                 &kp DOWN_ARROW     &kp UP_ARROW
+                                                                 &mkp LCLK              &mkp RCLK      &ALT_TAB              &kp HOME  &mkp LCLK               &mkp RCLK
+                                                                 &kp DEL                &kp BACKSPACE  &KEYBOARD_SETTINGS    &kp END   &kp SPACE               &mo 1
             >;
         };
 
         Numpad_Nav_Layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans    &trans    &trans     &trans  &trans
-&trans  &trans  &kp N7  &kp N8  &kp N9  &trans            &trans  &kp HOME  &kp UP    &kp END    &trans  &trans
-&trans  &trans  &kp N4  &kp N5  &kp N6  &trans            &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-&trans  &trans  &kp N1  &kp N2  &kp N3  &trans            &trans  &trans    &trans    &trans     &trans  &trans
-                &trans  &kp N0                                              &trans    &trans
-                                &trans  &trans  &trans    &trans  &trans    &trans
-                                &trans  &trans  &trans    &trans  &trans    &trans
+&kp F12  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5            &kp F6  &kp F7    &kp F8    &kp F9     &kp F10  &kp F11
+&trans   &trans  &kp N7  &kp N8  &kp N9  &trans            &trans  &kp HOME  &kp UP    &kp END    &trans   &trans
+&trans   &trans  &kp N4  &kp N5  &kp N6  &trans            &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans   &trans
+&trans   &trans  &kp N1  &kp N2  &kp N3  &trans            &trans  &trans    &trans    &trans     &trans   &trans
+                 &trans  &kp N0                                              &trans    &trans
+                                 &trans  &trans  &trans    &trans  &trans    &trans
+                                 &trans  &trans  &trans    &trans  &trans    &trans
             >;
         };
 
@@ -195,7 +222,7 @@
 &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4              &trans          &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans           &trans           &trans
 &sys_reset   &trans        &trans        &trans        &trans        &studio_unlock            &studio_unlock  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &sys_reset
 &bootloader  &trans        &trans        &trans        &trans        &trans                    &trans          &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &bootloader
-&to 4        &trans        &trans        &trans        &trans        &trans                    &trans          &trans           &trans           &trans           &trans           &to 4
+&to 0        &trans        &trans        &trans        &trans        &trans                    &trans          &trans           &trans           &trans           &trans           &to 0
                            &trans        &trans                                                                                 &trans           &trans
                                                        &trans        &trans          &trans    &trans          &trans           &trans
                                                        &trans        &trans          &trans    &trans          &trans           &trans
@@ -214,15 +241,27 @@
             >;
         };
 
-        factory_test {
+        Gaming_Naked {
             bindings = <
-&kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7            &kp N8  &kp N9  &kp N0  &kp N1  &kp N2  &kp N3
-&kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9            &kp N0  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5
-&kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp N1            &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7
-&kp N8  &kp N9  &kp N0  &kp N1  &kp N2  &kp N3            &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9
-                &kp N2  &kp N3                                            &kp N7  &kp N8
-                                &kp N1  &kp N2  &kp N3    &kp N4  &kp N5  &kp N6
-                                &kp N7  &kp N8  &kp N9    &kp N0  &kp N1  &kp N2
+&kp ESC    &kp N1  &kp N2    &kp N3     &kp N4     &kp N5                  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB    &kp Q   &kp W     &kp E      &kp R      &kp T                   &kp Y   &kp U   &kp I      &kp O    &kp P     &kp LBKT
+&kp CAPS   &kp A   &kp S     &kp D      &kp F      &kp G                   &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
+&kp LSHFT  &kp Z   &kp X     &kp C      &kp V      &kp B                   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                   &kp LEFT  &kp RIGHT                                                     &kp DOWN   &kp UP
+                                        &kp LALT   &kp LSHFT  &kp GRAVE    &trans  &trans  &trans
+                                        &kp LCTRL  &kp SPACE  &kp BSPC     &trans  &trans  &trans
+            >;
+        };
+
+        Gaming_Shifted {
+            bindings = <
+&trans  &kp GRAVE  &kp N1    &kp N2     &kp N3     &kp N4                      &kp N5  &kp N6  &kp N7    &kp N8     &kp N9   &kp N0
+&trans  &kp TAB    &kp Q     &kp W      &kp E      &kp R                       &kp T   &kp Y   &kp U     &kp I      &kp O    &kp P
+&trans  &kp CAPS   &kp A     &kp S      &kp D      &kp F                       &kp G   &kp H   &kp J     &kp K      &kp L    &kp SEMI
+&trans  &kp LSHFT  &kp Z     &kp X      &kp C      &kp V                       &kp B   &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH
+                   &kp LEFT  &kp RIGHT                                                         &kp DOWN  &kp UP
+                                        &kp LALT   &kp LSHFT  &kp TILDE        &trans  &trans  &trans
+                                        &kp LCTRL  &kp SPACE  &kp BACKSPACE    &trans  &trans  &trans
             >;
         };
     };
@@ -238,10 +277,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
