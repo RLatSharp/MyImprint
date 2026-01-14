@@ -214,10 +214,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LALT>,      /* press Alt */
-                <&kp TAB>,       /* press Tab */
-                <&kp TAB>,       /* optional extra cycle */
-                <&kp LALT>;      /* release Alt */
+                <&kp LALT &kp TAB &kp TAB &kp LALT>;      /* release Alt */
             label = "ALT_TAB";
             wait-ms = <40>;
             tap-ms = <20>;
