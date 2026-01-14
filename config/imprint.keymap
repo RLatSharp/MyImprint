@@ -20,26 +20,31 @@
         Left_Parenth {
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <16 17>;
+            layers = <0>;
         };
 
         Right_Parenth {
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <18 19>;
+            layers = <0>;
         };
 
         Left_Curly {
             bindings = <&kp LEFT_BRACE>;
             key-positions = <28 29>;
+            layers = <0>;
         };
 
         Right_Curly {
             bindings = <&kp RIGHT_BRACE>;
             key-positions = <30 31>;
+            layers = <0>;
         };
 
         Left_Bracket {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <40 41>;
+            layers = <0>;
         };
 
         Right_Bracket {
@@ -50,20 +55,23 @@
         LEFT_LESS {
             bindings = <&kp LESS_THAN>;
             key-positions = <16 15>;
+            layers = <0>;
         };
 
         RIGHT_GREATER {
             bindings = <&kp GREATER_THAN>;
             key-positions = <19 20>;
+            layers = <0>;
         };
 
         COMBO_CARET {
             bindings = <&kp CARET>;
             key-positions = <16 15 19 20>;
+            layers = <0>;
         };
 
         COMBO_GAME_MODE {
-            bindings = <&tog 5>;
+            bindings = <&tog 4>;
             key-positions = <60 61>;
         };
     };
@@ -326,10 +334,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
