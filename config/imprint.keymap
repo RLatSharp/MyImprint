@@ -210,7 +210,7 @@
     };
 
     macros {
-        ALT_TAB: alt_tab_sticky {
+        ALT_TAB: ALT_TAB {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -218,7 +218,7 @@
                 <&kp TAB>,       /* press Tab */
                 <&kp TAB>,       /* optional extra cycle */
                 <&kp LALT>;      /* release Alt */
-            label = "ALT_TAB_STICKY";
+            label = "ALT_TAB";
             wait-ms = <40>;
             tap-ms = <20>;
         };
