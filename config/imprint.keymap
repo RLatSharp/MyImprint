@@ -213,8 +213,7 @@
         ALT_TAB: ALT_TAB {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&kp LALT &kp TAB &kp TAB &kp LALT>;      /* release Alt */
+            bindings = <&kp LALT &kp TAB &kp TAB &kp LALT>;      /* release Alt */
             label = "ALT_TAB";
             wait-ms = <40>;
             tap-ms = <20>;
