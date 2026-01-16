@@ -119,6 +119,7 @@
             tapping-term-ms = <180>;
             flavor = "hold-preferred";
             hold-trigger-key-positions = <28>;
+            hold-while-undecided;
         };
 
         R_CTRL: R_CTRL {
@@ -163,6 +164,7 @@
             hold-trigger-key-positions = <31>;
             tapping-term-ms = <180>;
             flavor = "hold-preferred";
+            hold-while-undecided;
         };
 
         C_COPY: C_COPY {
@@ -262,11 +264,17 @@
         MOD_LAYER: MOD_LAYER {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &mo 1>
-    		, <&macro_tap &rgb_ug RGB_COLOR_HSB(128,100,100)>
-    		, <&macro_pause_for_release>
-    		, <&macro_release &mo 1>
-    		, <&macro_tap &rgb_ug RGB_COLOR_HSB(0,0,100)>;
+            bindings =
+                <&macro_press>,
+                <&mo 1>,
+                <&macro_tap>,
+                <&rgb_ug RGB_COLOR_HSB(128,100,100)>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 1>,
+                <&macro_tap>,
+                <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
+
             label = "MOD_LAYER";
         };
     };
@@ -382,10 +390,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
