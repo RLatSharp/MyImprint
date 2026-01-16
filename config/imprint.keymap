@@ -257,25 +257,36 @@
         HOME_LAYER: HOME_LAYER {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(0,0,100) &to 0>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(0,0,100) &to 0 &rgb_ug RGB_EFR>;
             label = "HOME_LAYER";
         };
 
-        MOD_LAYER: MOD_LAYER {
+        GAMING_LAYER: GAMING_LAYER {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&mo 1>,
-                <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(128,100,100)>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&mo 1>,
-                <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(0,0,100)>;
+            bindings = <&tog 4 &rgb_ug RGB_EFF &rgb_ug RGB_COLOR_HSB(181,100,51)>;
+            label = "GAMING_LAYER";
+        };
 
-            label = "MOD_LAYER";
+        GAMING_LAYER_SHIFTED: GAMING_LAYER_SHIFTED {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 5 &rgb_ug RGB_EFF>;
+            label = "GAMING_LAYER_SHIFTED";
+        };
+
+        HOME_LAYER_NO_EFF: HOME_LAYER_NO_EFF {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(0,0,100) &to 0>;
+            label = "HOME_LAYER_NO_EFF";
+        };
+
+        HOME_LAYER_2_EFF: HOME_LAYER_2_EFF {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(0,0,100) &to 0 &rgb_ug RGB_EFR &rgb_ug RGB_EFR>;
+            label = "HOME_LAYER_2_EFF";
         };
     };
 
@@ -332,32 +343,32 @@
 
         Gaming_Shifted {
             bindings = <
-&trans  &kp GRAVE  &kp N1    &kp N2     &kp N3     &kp N4                      &kp N5  &kp N6  &kp N7    &kp N8     &kp N9   &kp N0
-&trans  &kp TAB    &kp Q     &kp W      &kp E      &kp R                       &kp T   &kp Y   &kp U     &kp I      &kp O    &kp P
-&trans  &kp CAPS   &kp A     &kp S      &kp D      &kp F                       &kp G   &kp H   &kp J     &kp K      &kp L    &kp SEMI
-&trans  &kp LSHFT  &kp Z     &kp X      &kp C      &kp V                       &kp B   &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH
-                   &kp LEFT  &kp RIGHT                                                         &kp DOWN  &kp UP
-                                        &kp LALT   &kp LSHFT  &kp TILDE        &trans  &trans  &trans
-                                        &kp LCTRL  &kp SPACE  &kp BACKSPACE    &to 0   &trans  &tog 5
+&trans  &kp GRAVE  &kp N1    &kp N2     &kp N3     &kp N4                  &kp N5  &kp N6  &kp N7    &kp N8     &kp N9   &kp N0
+&trans  &kp TAB    &kp Q     &kp W      &kp E      &kp R                   &kp T   &kp Y   &kp U     &kp I      &kp O    &kp P
+&trans  &kp CAPS   &kp A     &kp S      &kp D      &kp F                   &kp G   &kp H   &kp J     &kp K      &kp L    &kp SEMI
+&trans  &kp LSHFT  &kp Z     &kp X      &kp C      &kp V                   &kp B   &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH
+                   &kp LEFT  &kp RIGHT                                                     &kp DOWN  &kp UP
+                                        &kp LALT   &kp LSHFT  &kp H        &trans  &trans  &trans
+                                        &kp LCTRL  &trans     &kp SPACE    &to 0   &trans  &tog 5
             >;
         };
 
         Gaming_Naked {
             bindings = <
 &kp ESC    &kp N1  &kp N2    &kp N3     &kp N4     &kp N5                  &kp N6  &kp N7  &kp N8     &kp N9          &kp N0    &tog 6
-&kp TAB    &kp Q   &kp W     &kp E      &kp R      &kp T                   &kp Y   &kp U   &kp I      &kp O           &kp P     &kp LBKT
+&kp TAB    &kp Q   &kp W     &kp E      &kp R      &kp T                   &kp Y   &kp U   &kp I      &kp O           &kp P     &GG_WP
 &kp CAPS   &kp A   &kp S     &kp D      &kp F      &kp G                   &kp H   &kp J   &kp K      &kp L           &kp SEMI  &kp APOS
 &kp LSHFT  &kp Z   &kp X     &kp C      &kp V      &kp B                   &kp N   &kp M   &kp COMMA  &QUESTION_MARK  &kp FSLH  &kp RSHFT
                    &kp LEFT  &kp RIGHT                                                     &kp DOWN   &kp UP
                                         &kp LALT   &kp LSHFT  &kp GRAVE    &trans  &trans  &trans
-                                        &kp LCTRL  &kp SPACE  &kp BSPC     &to 0   &trans  &tog 4
+                                        &kp LCTRL  &kp SPACE  &kp BSPC     &to 0   &trans  &tog 5
             >;
         };
 
         zeri {
             bindings = <
-&kp ESC    &kp N1  &kp N2    &kp N3     &kp N4     &kp N5                  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp TAB    &kp R   &kp W     &kp E      &kp Q      &kp T                   &kp Y   &kp U   &kp I      &kp O    &kp P     &kp LBKT
+&kp ESC    &kp N1  &kp N2    &kp N3     &kp N4     &kp N5                  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &tog 6
+&kp TAB    &kp R   &kp W     &kp E      &kp Q      &kp T                   &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
 &kp CAPS   &kp A   &kp S     &kp D      &kp F      &kp G                   &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
 &kp LSHFT  &kp Z   &kp X     &kp C      &kp V      &kp B                   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
                    &kp LEFT  &kp RIGHT                                                     &kp DOWN   &kp UP
@@ -390,10 +401,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
