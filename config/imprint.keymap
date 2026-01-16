@@ -396,4 +396,9 @@
         <&zip_xy_to_scroll_mapper>,
         // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
+scroller {
+        layers = <1>;
+        input-processors = <&zip_xy_to_scroll_mapper>;
+        process-next;
+    };
 };
