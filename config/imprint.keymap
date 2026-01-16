@@ -259,13 +259,13 @@
 
         default_layer {
             bindings = <
-&kp EQUAL  &kp N1           &kp N2             &kp N3            &kp N4                 &kp N5                               &kp N6                  &kp N7                  &kp N8             &kp N9                                &kp N0                   &kp MINUS
-&kp TAB    &kp Q            &kp W              &kp E             &kp R                  &kp T                                &kp Y                   &kp U                   &kp I              &kp O                                 &kp P                    &kp BSLH
-&kp ESC    &L_Ctrl LCTRL A  &L_ALT LEFT_ALT S  &L_OS LEFT_WIN D  &L_SHIFT LEFT_SHIFT F  &kp G                                &kp H                   &R_SHIFT RIGHT_SHIFT J  &R_OS RIGHT_WIN K  &R_ALT RIGHT_ALT L                    &R_CTRL RCTRL SEMICOLON  &kp SQT
-&kp CAPS   &kp Z            &kp X              &C_COPY LC(C) C   &V_PASTE LC(V) V       &kp B                                &kp N                   &kp M                   &kp COMMA          &SCREAMING_PERIOD EXCLAMATION PERIOD  &kp FSLH                 &kp UNDERSCORE
-                            &kp LEFT_ARROW     &kp RIGHT_ARROW                                                                                                               &kp DOWN_ARROW     &kp UP_ARROW
+&kp EQUAL  &kp N1           &kp N2             &kp N3            &kp N4                 &kp N5                               &kp N6                  &kp N7                  &kp N8                          &kp N9                                &kp N0                   &kp MINUS
+&kp TAB    &kp Q            &kp W              &kp E             &kp R                  &kp T                                &kp Y                   &kp U                   &kp I                           &kp O                                 &kp P                    &kp BSLH
+&kp ESC    &L_Ctrl LCTRL A  &L_ALT LEFT_ALT S  &L_OS LEFT_WIN D  &L_SHIFT LEFT_SHIFT F  &kp G                                &kp H                   &R_SHIFT RIGHT_SHIFT J  &R_OS RIGHT_WIN K               &R_ALT RIGHT_ALT L                    &R_CTRL RCTRL SEMICOLON  &kp SQT
+&kp CAPS   &kp Z            &kp X              &C_COPY LC(C) C   &V_PASTE LC(V) V       &kp B                                &kp N                   &kp M                   &kp COMMA                       &SCREAMING_PERIOD EXCLAMATION PERIOD  &kp FSLH                 &kp UNDERSCORE
+                            &kp LEFT_ARROW     &kp RIGHT_ARROW                                                                                                               &kp DOWN_ARROW                  &kp UP_ARROW
                                                                  &mkp LCLK              &mkp RCLK      &ALT_TAB              &kp LC(LG(LEFT_ARROW))  &kp LG(LC(D))           &kp LC(LG(RIGHT))
-                                                                 &kp DEL                &kp BACKSPACE  &KEYBOARD_SETTINGS    &caps_word              &kp SPACE               &mo 1
+                                                                 &kp DEL                &kp BACKSPACE  &KEYBOARD_SETTINGS    &caps_word              &kp SPACE               &rgb_ug RGB_COLOR_HSB(0,0,100)
             >;
         };
 
@@ -365,10 +365,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
