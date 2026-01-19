@@ -284,6 +284,20 @@
             bindings = <&rgb_ug RGB_COLOR_HSB(180,94,48) &rgb_ug RGB_EFF &tog 4>;
             label = "GAMING_LAYER";
         };
+
+        GAMING_LAYER_NONSHIFT: GAMING_LAYER_NONSHIFT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_EFF &tog 5>;
+            label = "GAMING_LAYER_NONSHIFT";
+        };
+
+        HOME_FROM_SHIFTED: HOME_FROM_SHIFTED {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_EFR &HOME_LAYER>;
+            label = "HOME_FROM_SHIFTED";
+        };
     };
 
     keymap {
@@ -339,37 +353,37 @@
 
         Gaming_Shifted {
             bindings = <
-&trans  &kp GRAVE  &kp N1    &kp N2     &kp N3     &kp N4                      &kp N5       &kp N6  &kp N7    &kp N8     &kp N9   &kp N0
-&trans  &kp TAB    &kp Q     &kp W      &kp E      &kp R                       &kp T        &kp Y   &kp U     &kp I      &kp O    &kp P
-&trans  &kp CAPS   &kp A     &kp S      &kp D      &kp F                       &kp G        &kp H   &kp J     &kp K      &kp L    &kp SEMI
-&trans  &kp LSHFT  &kp Z     &kp X      &kp C      &kp V                       &kp B        &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH
-                   &kp LEFT  &kp RIGHT                                                              &kp DOWN  &kp UP
-                                        &kp LALT   &kp LSHFT  &kp TILDE        &trans       &trans  &trans
-                                        &kp LCTRL  &kp SPACE  &kp BACKSPACE    &HOME_LAYER  &trans  &tog 5
+&trans  &kp GRAVE  &kp N1    &kp N2     &kp N3     &kp N4                          &kp N5       &kp N6  &kp N7    &kp N8     &kp N9   &kp N0
+&trans  &kp TAB    &kp Q     &kp W      &kp E      &kp R                           &kp T        &kp Y   &kp U     &kp I      &kp O    &kp P
+&trans  &kp CAPS   &kp A     &kp S      &kp D      &kp F                           &kp G        &kp H   &kp J     &kp K      &kp L    &kp SEMI
+&trans  &kp LSHFT  &kp Z     &kp X      &kp C      &kp V                           &kp B        &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH
+                   &kp LEFT  &kp RIGHT                                                                  &kp DOWN  &kp UP
+                                        &kp LALT   &kp LSHFT      &kp TILDE        &trans       &trans  &trans
+                                        &kp LCTRL  &kp BACKSPACE  &kp BACKSPACE    &HOME_LAYER  &trans  &tog 5
             >;
         };
 
         Gaming_Naked {
             bindings = <
-&kp ESC    &kp N1  &kp N2    &kp N3     &kp N4     &kp N5                  &kp N6  &kp N7  &kp N8     &kp N9          &kp N0    &tog 6
-&kp TAB    &kp Q   &kp W     &kp E      &kp R      &kp T                   &kp Y   &kp U   &kp I      &kp O           &kp P     &kp LBKT
-&kp CAPS   &kp A   &kp S     &kp D      &kp F      &kp G                   &kp H   &kp J   &kp K      &kp L           &kp SEMI  &kp APOS
-&kp LSHFT  &kp Z   &kp X     &kp C      &kp V      &kp B                   &kp N   &kp M   &kp COMMA  &QUESTION_MARK  &kp FSLH  &kp RSHFT
-                   &kp LEFT  &kp RIGHT                                                     &kp DOWN   &kp UP
-                                        &kp LALT   &kp LSHFT  &kp GRAVE    &trans  &trans  &trans
-                                        &kp LCTRL  &kp SPACE  &kp BSPC     &to 0   &trans  &tog 4
+&kp ESC    &kp N1  &kp N2    &kp N3     &kp N4     &kp N5                  &kp N6              &kp N7  &kp N8     &kp N9          &kp N0    &tog 6
+&kp TAB    &kp Q   &kp W     &kp E      &kp R      &kp T                   &kp Y               &kp U   &kp I      &kp O           &kp P     &GG_WP
+&kp CAPS   &kp A   &kp S     &kp D      &kp F      &kp G                   &kp H               &kp J   &kp K      &kp L           &kp SEMI  &kp APOS
+&kp LSHFT  &kp Z   &kp X     &kp C      &kp V      &kp B                   &kp N               &kp M   &kp COMMA  &QUESTION_MARK  &kp FSLH  &kp RSHFT
+                   &kp LEFT  &kp RIGHT                                                                 &kp DOWN   &kp UP
+                                        &kp LALT   &kp LSHFT      &kp H    &trans              &trans  &trans
+                                        &kp LCTRL  &kp BACKSPACE  &kp Y    &HOME_FROM_SHIFTED  &trans  &tog 5
             >;
         };
 
         zeri {
             bindings = <
-&kp ESC    &kp N1  &kp N2    &kp N3     &kp N4     &kp N5                  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp TAB    &kp R   &kp W     &kp E      &kp Q      &kp T                   &kp Y   &kp U   &kp I      &kp O    &kp P     &kp LBKT
-&kp CAPS   &kp A   &kp S     &kp D      &kp F      &kp G                   &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
-&kp LSHFT  &kp Z   &kp X     &kp C      &kp V      &kp B                   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                   &kp LEFT  &kp RIGHT                                                     &kp DOWN   &kp UP
-                                        &kp LALT   &kp LSHFT  &kp GRAVE    &trans  &trans  &trans
-                                        &kp LCTRL  &kp SPACE  &kp BSPC     &to 0   &trans  &tog 4
+&kp ESC    &kp N1  &kp N2    &kp N3     &kp N4     &kp N5                  &kp N6              &kp N7  &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB    &kp R   &kp W     &kp E      &kp Q      &kp T                   &kp Y               &kp U   &kp I      &kp O    &kp P     &kp LBKT
+&kp CAPS   &kp A   &kp S     &kp D      &kp F      &kp G                   &kp H               &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
+&kp LSHFT  &kp Z   &kp X     &kp C      &kp V      &kp B                   &kp N               &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                   &kp LEFT  &kp RIGHT                                                                 &kp DOWN   &kp UP
+                                        &kp LALT   &kp LSHFT  &kp GRAVE    &trans              &trans  &trans
+                                        &kp LCTRL  &kp SPACE  &kp BSPC     &HOME_FROM_SHIFTED  &trans  &tog 6
             >;
         };
 
