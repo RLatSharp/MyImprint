@@ -21,47 +21,63 @@
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <16 17>;
             layers = <0>;
+            require-prior-idle-ms = <250>;
+            timeout-ms = <50>;
         };
 
         Right_Parenth {
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <18 19>;
             layers = <0>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <250>;
         };
 
         Left_Curly {
             bindings = <&kp LEFT_BRACE>;
             key-positions = <28 29>;
             layers = <0>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <250>;
         };
 
         Right_Curly {
             bindings = <&kp RIGHT_BRACE>;
             key-positions = <30 31>;
             layers = <0>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <250>;
         };
 
         Left_Bracket {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <40 41>;
             layers = <0>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <250>;
         };
 
         Right_Bracket {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <42 43>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <250>;
         };
 
         LEFT_LESS {
             bindings = <&kp LESS_THAN>;
             key-positions = <16 15>;
             layers = <0>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <250>;
         };
 
         RIGHT_GREATER {
             bindings = <&kp GREATER_THAN>;
             key-positions = <19 20>;
             layers = <0>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <250>;
         };
 
         COMBO_CARET {
@@ -74,6 +90,11 @@
             bindings = <&GAMING_LAYER>;
             key-positions = <60 61>;
         };
+
+        Shift_Combo {
+            bindings = <&sk LEFT_SHIFT>;
+            key-positions = <59 62>;
+        };
     };
 
     behaviors {
@@ -84,8 +105,9 @@
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <25>;
-            tapping-term-ms = <210>;
+            tapping-term-ms = <280>;
             flavor = "balanced";
+            require-prior-idle-ms = <250>;
         };
 
         L_ALT: L_ALT {
@@ -95,8 +117,9 @@
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <26>;
-            tapping-term-ms = <210>;
+            tapping-term-ms = <280>;
             flavor = "balanced";
+            require-prior-idle-ms = <250>;
         };
 
         L_OS: L_OS {
@@ -105,9 +128,10 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <210>;
+            tapping-term-ms = <280>;
             flavor = "balanced";
             hold-trigger-key-positions = <27>;
+            require-prior-idle-ms = <250>;
         };
 
         L_SHIFT: L_SHIFT {
@@ -116,10 +140,11 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <180>;
+            tapping-term-ms = <280>;
             flavor = "hold-preferred";
             hold-trigger-key-positions = <28>;
             hold-while-undecided;
+            require-prior-idle-ms = <250>;
         };
 
         R_CTRL: R_CTRL {
@@ -129,8 +154,9 @@
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <34>;
-            tapping-term-ms = <210>;
+            tapping-term-ms = <280>;
             flavor = "balanced";
+            require-prior-idle-ms = <250>;
         };
 
         R_ALT: R_ALT {
@@ -140,8 +166,9 @@
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <33>;
-            tapping-term-ms = <210>;
+            tapping-term-ms = <280>;
             flavor = "balanced";
+            require-prior-idle-ms = <250>;
         };
 
         R_OS: R_OS {
@@ -151,8 +178,9 @@
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <32>;
-            tapping-term-ms = <210>;
+            tapping-term-ms = <280>;
             flavor = "balanced";
+            require-prior-idle-ms = <250>;
         };
 
         R_SHIFT: R_SHIFT {
@@ -162,9 +190,10 @@
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <31>;
-            tapping-term-ms = <180>;
+            tapping-term-ms = <280>;
             flavor = "hold-preferred";
             hold-while-undecided;
+            require-prior-idle-ms = <250>;
         };
 
         C_COPY: C_COPY {
@@ -176,7 +205,7 @@
             tapping-term-ms = <250>;
             hold-trigger-key-positions = <39>;
             flavor = "balanced";
-            require-prior-idle-ms = <400>;
+            require-prior-idle-ms = <250>;
         };
 
         V_PASTE: V_PASTE {
@@ -185,11 +214,10 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <210>;
+            tapping-term-ms = <250>;
             hold-trigger-key-positions = <40>;
             flavor = "balanced";
-            quick-tap-ms = <(-1)>;
-            require-prior-idle-ms = <400>;
+            require-prior-idle-ms = <250>;
         };
 
         SCREAMING_PERIOD: SCREAMING_PERIOD {
@@ -305,13 +333,13 @@
 
         default_layer {
             bindings = <
-&kp EQUAL  &kp N1           &kp N2             &kp N3            &kp N4                 &kp N5                               &kp N6                  &kp N7                  &kp N8              &kp N9              &kp N0                   &kp MINUS
-&kp TAB    &kp Q            &kp W              &kp E             &kp R                  &kp T                                &kp Y                   &kp U                   &kp I               &kp O               &kp P                    &kp BSLH
-&kp ESC    &L_Ctrl LCTRL A  &L_ALT LEFT_ALT S  &L_OS LEFT_WIN D  &L_SHIFT LEFT_SHIFT F  &kp G                                &kp H                   &R_SHIFT RIGHT_SHIFT J  &R_OS RIGHT_WIN K   &R_ALT RIGHT_ALT L  &R_CTRL RCTRL SEMICOLON  &kp SQT
-&kp CAPS   &kp Z            &kp X              &C_COPY LC(C) C   &V_PASTE LC(V) V       &kp B                                &kp N                   &kp M                   &kp COMMA           &QUESTION_MARK      &kp FSLH                 &kp UNDERSCORE
-                            &kp LEFT_ARROW     &kp RIGHT_ARROW                                                                                                               &kp DOWN_ARROW      &kp UP_ARROW
+&kp EQUAL  &kp N1           &kp N2             &kp N3            &kp N4                 &kp N5                               &kp N6                  &kp N7                  &kp N8             &kp N9              &kp N0                   &kp MINUS
+&kp TAB    &kp Q            &kp W              &kp E             &kp R                  &kp T                                &kp Y                   &kp U                   &kp I              &kp O               &kp P                    &kp BSLH
+&kp ESC    &L_Ctrl LCTRL A  &L_ALT LEFT_ALT S  &L_OS LEFT_WIN D  &L_SHIFT LEFT_SHIFT F  &kp G                                &kp H                   &R_SHIFT RIGHT_SHIFT J  &R_OS RIGHT_WIN K  &R_ALT RIGHT_ALT L  &R_CTRL RCTRL SEMICOLON  &kp SQT
+&kp CAPS   &kp Z            &kp X              &C_COPY LC(C) C   &V_PASTE LC(V) V       &kp B                                &kp N                   &kp M                   &kp COMMA          &QUESTION_MARK      &kp FSLH                 &kp UNDERSCORE
+                            &kp LEFT_ARROW     &kp RIGHT_ARROW                                                                                                               &kp DOWN_ARROW     &kp UP_ARROW
                                                                  &mkp LCLK              &mkp RCLK      &ALT_TAB              &kp LC(LG(LEFT_ARROW))  &kp LG(LC(D))           &kp LC(LG(RIGHT))
-                                                                 &kp DEL                &kp BACKSPACE  &KEYBOARD_SETTINGS    &caps_word              &kp SPACE               &sk LS(LEFT_SHIFT)
+                                                                 &kp DEL                &kp BACKSPACE  &KEYBOARD_SETTINGS    &caps_word              &kp SPACE               &kp LG(LS(S))
             >;
         };
 
@@ -389,13 +417,13 @@
 
         ALTTAB {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans                                                    &trans  &trans
-                                &trans  &trans  &kp TAB           &trans  &trans  &trans
-                                &trans  &trans  &ALT_TAB_CLOSE    &trans  &trans  &trans
+&none  &none  &none  &none  &none  &none                    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                    &none  &none  &none  &none  &none  &none
+              &none  &none                                                &none  &none
+                            &none  &none  &kp TAB           &none  &none  &none
+                            &none  &none  &ALT_TAB_CLOSE    &none  &none  &none
             >;
         };
     };
