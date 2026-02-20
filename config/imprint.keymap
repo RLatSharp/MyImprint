@@ -347,13 +347,13 @@
 
         Numpad_Nav_Layer {
             bindings = <
-&kp F12  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5            &kp F6          &kp F7          &kp F8        &kp F9     &kp F10  &kp F11
-&to 0    &trans  &kp N7  &kp N8  &kp N9  &trans            &trans          &kp HOME        &kp UP        &kp END    &trans   &trans
-&trans   &trans  &kp N4  &kp N5  &kp N6  &trans            &kp LEFT_ARROW  &kp DOWN        &kp UP_ARROW  &kp RIGHT  &trans   &trans
-&trans   &trans  &kp N1  &kp N2  &kp N3  &trans            &trans          &trans          &trans        &trans     &trans   &trans
-                 &trans  &kp N0                                                            &trans        &trans
-                                 &trans  &trans  &trans    &trans          &kp LG(LC(F4))  &trans
-                                 &trans  &trans  &trans    &trans          &trans          &trans
+&kp F12  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                   &kp F6          &kp F7          &kp F8        &kp F9     &kp F10  &kp F11
+&to 0    &trans  &kp N7  &kp N8  &kp N9  &trans                   &trans          &kp HOME        &kp UP        &kp END    &trans   &trans
+&trans   &trans  &kp N4  &kp N5  &kp N6  &kp LA(LS(R))            &kp LEFT_ARROW  &kp DOWN        &kp UP_ARROW  &kp RIGHT  &trans   &trans
+&trans   &trans  &kp N1  &kp N2  &kp N3  &kp LA(LS(S))            &trans          &trans          &trans        &trans     &trans   &trans
+                 &trans  &kp N0                                                                   &trans        &trans
+                                 &trans  &trans         &trans    &trans          &kp LG(LC(F4))  &trans
+                                 &trans  &trans         &trans    &trans          &trans          &trans
             >;
         };
 
