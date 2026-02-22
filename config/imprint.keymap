@@ -329,11 +329,11 @@
             label = "HOME_FROM_SHIFTED";
         };
 
-        o_umlaut: o_ummlat {
+        o_umlaut_lower: o_ummlat_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kt LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_4 &kp KP_NUMBER_6 &kt LEFT_ALT>;
-            label = "O_UMMLAT";
+            label = "O_UMMLAT_lower";
         };
 
         O_umlaut: O_umlaut {
@@ -343,11 +343,11 @@
             label = "O_UMLAUT";
         };
 
-        a_umlaut: a_umlaut {
+        a_umlaut_lower: a_umlaut_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kt LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_8 &kt LEFT_ALT>;
-            label = "A_UMLAUT";
+            label = "A_UMLAUT_LOWER";
         };
 
         A_umlaut: A_umlaut {
@@ -357,11 +357,11 @@
             label = "A_UMLAUT";
         };
 
-        u_umlaut: u_umlaut {
+        u_umlaut_lower: u_umlaut_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kt LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_5 &kp KP_NUMBER_2 &kt LEFT_ALT>;
-            label = "U_UMLAUT";
+            label = "U_UMLAUT_LOWER";
         };
 
         U_umlaut: U_umlaut {
@@ -371,11 +371,11 @@
             label = "U_UMLAUT";
         };
 
-        s_sharp: s_sharp {
+        s_sharp_lower: s_sharp_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kt LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_3 &kt LEFT_ALT>;
-            label = "S_SHARP";
+            label = "S_SHARP_LOWER";
         };
 
         S_sharp: S_sharp {
@@ -413,7 +413,7 @@
 &kp F12  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                   &kp F6          &kp F7          &kp F8        &kp F9     &kp F10  &kp F11
 &to 0    &trans  &kp N7  &kp N8  &kp N9  &trans                   &trans          &kp HOME        &kp UP        &kp END    &trans   &trans
 &trans   &trans  &kp N4  &kp N5  &kp N6  &kp LA(LS(R))            &kp LEFT_ARROW  &kp DOWN        &kp UP_ARROW  &kp RIGHT  &trans   &trans
-&trans   &trans  &kp N1  &kp N2  &kp N3  &kp LA(LS(S))            &trans          &trans          &trans        &trans     &trans   &o_umlaut
+&trans   &trans  &kp N1  &kp N2  &kp N3  &kp LA(LS(S))            &trans          &trans          &trans        &trans     &trans   &trans
                  &trans  &kp N0                                                                   &trans        &trans
                                  &trans  &trans         &trans    &trans          &kp LG(LC(F4))  &trans
                                  &trans  &trans         &trans    &trans          &trans          &trans
@@ -518,13 +518,13 @@
 
         layer_10 {
             bindings = <
-&trans  &trans     &trans    &trans  &trans  &trans            &trans  &trans     &trans  &trans     &trans  &trans
-&trans  &trans     &trans    &trans  &trans  &trans            &trans  &u_umlaut  &trans  &o_umlaut  &trans  &trans
-&trans  &a_umlaut  &s_sharp  &trans  &trans  &trans            &trans  &trans     &trans  &trans     &trans  &trans
-&trans  &trans     &trans    &trans  &trans  &trans            &trans  &trans     &trans  &trans     &trans  &trans
-                   &trans    &trans                                               &trans  &trans
-                                     &trans  &trans  &trans    &trans  &trans     &trans
-                                     &trans  &sl 11  &trans    &trans  &trans     &trans
+&trans  &trans           &trans          &trans  &trans  &trans            &trans  &trans           &trans  &trans           &trans  &trans
+&trans  &trans           &trans          &trans  &trans  &trans            &trans  &u_umlaut_lower  &trans  &o_umlaut_lower  &trans  &trans
+&trans  &a_umlaut_lower  &s_sharp_lower  &trans  &trans  &trans            &trans  &trans           &trans  &trans           &trans  &trans
+&trans  &trans           &trans          &trans  &trans  &trans            &trans  &trans           &trans  &trans           &trans  &trans
+                         &trans          &trans                                                     &trans  &trans
+                                                 &trans  &trans  &trans    &trans  &trans           &trans
+                                                 &trans  &sl 11  &trans    &trans  &trans           &trans
             >;
         };
 
