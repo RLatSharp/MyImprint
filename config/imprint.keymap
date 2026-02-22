@@ -328,6 +328,13 @@
             bindings = <&rgb_ug RGB_EFR &HOME_LAYER>;
             label = "HOME_FROM_SHIFTED";
         };
+
+        o_ummlat: o_ummlat {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_4 &kp KP_NUMBER_6 &kt LEFT_ALT>;
+            label = "O_UMMLAT";
+        };
     };
 
     keymap {
@@ -350,7 +357,7 @@
 &kp F12  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                   &kp F6          &kp F7          &kp F8        &kp F9     &kp F10  &kp F11
 &to 0    &trans  &kp N7  &kp N8  &kp N9  &trans                   &trans          &kp HOME        &kp UP        &kp END    &trans   &trans
 &trans   &trans  &kp N4  &kp N5  &kp N6  &kp LA(LS(R))            &kp LEFT_ARROW  &kp DOWN        &kp UP_ARROW  &kp RIGHT  &trans   &trans
-&trans   &trans  &kp N1  &kp N2  &kp N3  &kp LA(LS(S))            &trans          &trans          &trans        &trans     &trans   &trans
+&trans   &trans  &kp N1  &kp N2  &kp N3  &kp LA(LS(S))            &trans          &trans          &trans        &trans     &trans   &o_ummlat
                  &trans  &kp N0                                                                   &trans        &trans
                                  &trans  &trans         &trans    &trans          &kp LG(LC(F4))  &trans
                                  &trans  &trans         &trans    &trans          &trans          &trans
