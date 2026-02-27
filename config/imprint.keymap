@@ -458,13 +458,13 @@
 
         Gaming_Naked {
             bindings = <
-&kp ESC    &kp N1  &kp N2    &kp N3     &kp N4         &kp N5              &kp N6              &kp N7  &kp N8     &kp N9          &kp N0    &tog 6
-&kp TAB    &kp Q   &kp W     &kp E      &kp R          &kp T               &kp Y               &kp U   &kp I      &kp O           &kp P     &GG_WP
-&kp CAPS   &kp A   &kp S     &kp D      &kp F          &kp G               &kp H               &kp J   &kp K      &kp L           &kp SEMI  &kp APOS
-&kp LSHFT  &kp Z   &kp X     &kp C      &kp V          &kp B               &kp N               &kp M   &kp COMMA  &QUESTION_MARK  &kp FSLH  &tog 8
-                   &kp LEFT  &kp RIGHT                                                                 &kp DOWN   &kp UP
-                                        &kp LALT       &kp LSHFT  &kp H    &trans              &trans  &trans
-                                        &kp BACKSPACE  &kp LCTRL  &kp Y    &HOME_FROM_SHIFTED  &trans  &tog 5
+&kp ESC    &kp N1  &kp N2    &kp N3     &kp N4  &kp N5            &kp N6              &kp N7  &kp N8     &kp N9          &kp N0    &tog 6
+&kp TAB    &kp Q   &kp W     &kp E      &kp R   &kp T             &kp Y               &kp U   &kp I      &kp O           &kp P     &GG_WP
+&kp CAPS   &kp A   &kp S     &kp D      &kp F   &kp G             &kp H               &kp J   &kp K      &kp L           &kp SEMI  &kp APOS
+&kp LSHFT  &kp Z   &kp X     &kp C      &kp V   &kp B             &kp N               &kp M   &kp COMMA  &QUESTION_MARK  &kp FSLH  &tog 8
+                   &kp LEFT  &kp RIGHT                                                        &kp DOWN   &kp UP
+                                        &trans  &trans  &trans    &trans              &trans  &trans
+                                        &trans  &trans  &trans    &HOME_FROM_SHIFTED  &trans  &tog 5
             >;
         };
 
