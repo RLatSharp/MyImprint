@@ -404,7 +404,7 @@
 &kp CAPS   &kp Z            &kp X              &C_COPY LC(C) C   &V_PASTE LC(V) V       &kp B                       &kp N                   &kp M                   &kp COMMA          &QUESTION_MARK      &kp FSLH                 &kp UNDERSCORE
                             &kp LEFT_ARROW     &kp RIGHT_ARROW                                                                                                      &kp DOWN_ARROW     &kp UP_ARROW
                                                                  &mkp LCLK              &mkp RCLK       &ALT_TAB    &kp LC(LG(LEFT_ARROW))  &kp LG(LC(D))           &kp LC(LG(RIGHT))
-                                                                 &kp BACKSPACE          &sk LEFT_SHIFT  &to 1       &caps_word              &kp SPACE               &kp LG(LS(S))
+                                                                 &kp BACKSPACE          &sk LEFT_SHIFT  &mo 1       &caps_word              &kp SPACE               &kp LG(LS(S))
             >;
         };
 
@@ -545,8 +545,8 @@
 // left hand trackball configuration (unused)
 // &trackball_central_listener {
 // };
-
 // right hand trackball configuration
+
 &trackball_peripheral_listener {
     input-processors = <&zip_xy_scaler 1 1>;
 
