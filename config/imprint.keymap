@@ -551,10 +551,10 @@
 //left hand trackball configuration
 
 &trackball_central_listener {
-    // Layer 0 (default): normal cursor movement
-
-    input-processors = <&zip_xy_scaler 1 1>;  // change to 1 2 or 1 3 if you want slower cursor
-    // Layer 1: scrolling mode
+    cursor {
+        layers = <0>;
+        input-processors = <&zip_xy_scaler 1 1>;
+    };
 
     scroller {
         layers = <1>;
