@@ -88,14 +88,14 @@
             layers = <0>;
         };
 
-        COMBO_GAME_MODE {
-            bindings = <&GAMING_LAYER>;
-            key-positions = <60 61>;
-        };
-
         German_Chars {
             bindings = <&sl 10>;
             key-positions = <59 62>;
+        };
+
+        Middle_Click_Combo {
+            bindings = <&mkp MCLK>;
+            key-positions = <53 52>;
         };
     };
 
@@ -244,6 +244,37 @@
             label = "QUESTION_MARK";
             #binding-cells = <0>;
             bindings = <&SCREAMING_PERIOD EXCL PERIOD>, <&kp QUESTION>;
+        };
+
+        Z_Undo: Z_Undo {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Z_UNDO";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            hold-trigger-key-positions = <37>;
+            flavor = "balanced";
+            require-prior-idle-ms = <250>;
+        };
+
+        Quote_tap: Quote_tap {
+            compatible = "zmk,behavior-tap-dance";
+            label = "QUOTE_TAP";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
+        };
+
+        Caps_Word_tapdance: Caps_Word_tapdance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CAPS_WORD_TAPDANCE";
+            bindings = <&mo>, <&caps_word>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            hold-trigger-key-positions = <61>;
+            flavor = "balanced";
+            require-prior-idle-ms = <250>;
         };
     };
 
@@ -398,13 +429,13 @@
 
         default_layer {
             bindings = <
-&kp EQUAL  &kp N1           &kp N2             &kp N3            &kp N4                 &kp N5                      &kp N6                  &kp N7                  &kp N8             &kp N9              &kp N0                   &kp MINUS
-&kp TAB    &kp Q            &kp W              &kp E             &kp R                  &kp T                       &kp Y                   &kp U                   &kp I              &kp O               &kp P                    &kp BSLH
-&kp ESC    &L_Ctrl LCTRL A  &L_ALT LEFT_ALT S  &L_OS LEFT_WIN D  &L_SHIFT LEFT_SHIFT F  &kp G                       &kp H                   &R_SHIFT RIGHT_SHIFT J  &R_OS RIGHT_WIN K  &R_ALT RIGHT_ALT L  &R_CTRL RCTRL SEMICOLON  &kp SQT
-&kp CAPS   &kp Z            &kp X              &C_COPY LC(C) C   &V_PASTE LC(V) V       &kp B                       &kp N                   &kp M                   &kp COMMA          &QUESTION_MARK      &kp FSLH                 &kp UNDERSCORE
-                            &kp LEFT_ARROW     &kp RIGHT_ARROW                                                                                                      &kp DOWN_ARROW     &kp UP_ARROW
-                                                                 &mkp LCLK              &mkp RCLK       &ALT_TAB    &kp LC(LG(LEFT_ARROW))  &kp LG(LC(D))           &kp LC(LG(RIGHT))
-                                                                 &kp BACKSPACE          &sk LEFT_SHIFT  &mo 1       &caps_word              &kp SPACE               &kp LG(LS(S))
+&kp EQUAL  &kp N1           &kp N2             &kp N3            &kp N4                 &kp N5                      &kp N6                   &kp N7                  &kp N8             &kp N9              &kp N0                   &kp MINUS
+&kp TAB    &kp Q            &kp W              &kp E             &kp R                  &kp T                       &Z_Undo LC(Y) Y          &kp U                   &kp I              &kp O               &Z_Undo PERCENT P        &kp BSLH
+&kp ESC    &L_Ctrl LCTRL A  &L_ALT LEFT_ALT S  &L_OS LEFT_WIN D  &L_SHIFT LEFT_SHIFT F  &kp G                       &kp H                    &R_SHIFT RIGHT_SHIFT J  &R_OS RIGHT_WIN K  &R_ALT RIGHT_ALT L  &R_CTRL RCTRL SEMICOLON  &Quote_tap
+&kp COLON  &Z_Undo LC(Z) Z  &Z_Undo LC(X) X    &C_COPY LC(C) C   &V_PASTE LC(V) V       &kp B                       &kp N                    &kp M                   &kp COMMA          &QUESTION_MARK      &kp FSLH                 &kp UNDERSCORE
+                            &kp LEFT_ARROW     &kp RIGHT_ARROW                                                                                                       &kp DOWN_ARROW     &kp UP_ARROW
+                                                                 &mkp LCLK              &mkp RCLK       &ALT_TAB    &kp LC(LG(LEFT_ARROW))   &kp LG(LC(D))           &kp LC(LG(RIGHT))
+                                                                 &kp BACKSPACE          &sk LEFT_SHIFT  &mo 1       &Caps_Word_tapdance 1 0  &kp SPACE               &kp LG(LS(S))
             >;
         };
 
@@ -413,7 +444,7 @@
 &kp F12  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                   &kp F6          &kp F7          &kp F8        &kp F9     &kp F10  &kp F11
 &to 0    &trans  &kp N7  &kp N8  &kp N9  &trans                   &trans          &kp HOME        &kp UP        &kp END    &trans   &trans
 &trans   &trans  &kp N4  &kp N5  &kp N6  &kp LA(LS(R))            &kp LEFT_ARROW  &kp DOWN        &kp UP_ARROW  &kp RIGHT  &trans   &trans
-&trans   &trans  &kp N1  &kp N2  &kp N3  &kp LA(LS(S))            &trans          &trans          &trans        &trans     &trans   &trans
+&trans   &trans  &kp N1  &kp N2  &kp N3  &kp LA(LS(S))            &tog 2          &tog 4          &tog 5        &tog 6     &tog 8   &trans
                  &trans  &kp N0                                                                   &trans        &trans
                                  &trans  &trans         &trans    &trans          &kp LG(LC(F4))  &trans
                                  &trans  &trans         &to 0     &trans          &trans          &trans
@@ -446,37 +477,37 @@
 
         Gaming_Shifted {
             bindings = <
-&trans  &kp GRAVE  &kp N1    &kp N2     &kp N3         &kp N4                             &kp N5       &kp N6  &kp N7                  &kp N8     &kp N9   &kp N0
-&trans  &kp TAB    &kp Q     &kp W      &kp E          &kp R                              &kp T        &kp Y   &kp U                   &kp I      &kp O    &kp P
-&trans  &kp CAPS   &kp A     &kp S      &kp D          &kp F                              &kp G        &kp H   &kp J                   &kp K      &kp L    &kp SEMI
-&trans  &kp LSHFT  &kp Z     &kp X      &kp C          &kp V                              &kp B        &kp N   &kp M                   &kp COMMA  &kp DOT  &kp FSLH
-                   &kp LEFT  &kp RIGHT                                                                         &kp DOWN                &kp UP
-                                        &kp LALT       &kp LSHFT         &kp TILDE        &trans       &trans  &trans
-                                        &kp BACKSPACE  &kp LEFT_CONTROL  &kp BACKSPACE    &HOME_LAYER  &trans  &GAMING_LAYER_NONSHIFT
+&trans  &kp GRAVE  &kp N1    &kp N2     &kp N3         &kp N4                             &kp N5  &kp N6  &kp N7    &kp N8     &kp N9   &kp N0
+&trans  &kp TAB    &kp Q     &kp W      &kp E          &kp R                              &kp T   &kp Y   &kp U     &kp I      &kp O    &kp P
+&trans  &kp CAPS   &kp A     &kp S      &kp D          &kp F                              &kp G   &kp H   &kp J     &kp K      &kp L    &kp SEMI
+&trans  &kp LSHFT  &kp Z     &kp X      &kp C          &kp V                              &kp B   &kp N   &kp M     &kp COMMA  &kp DOT  &to 0
+                   &kp LEFT  &kp RIGHT                                                                    &kp DOWN  &kp UP
+                                        &kp LALT       &kp LSHFT         &kp TILDE        &trans  &trans  &trans
+                                        &kp BACKSPACE  &kp LEFT_CONTROL  &kp BACKSPACE    &trans  &trans  &trans
             >;
         };
 
         Gaming_Naked {
             bindings = <
-&kp ESC    &kp N1  &kp N2    &kp N3     &kp N4        &kp N5               &kp N6              &kp N7  &kp N8     &kp N9          &kp N0    &tog 6
-&kp TAB    &kp Q   &kp W     &kp E      &kp R         &kp T                &kp Y               &kp U   &kp I      &kp O           &kp P     &GG_WP
-&kp CAPS   &kp A   &kp S     &kp D      &kp F         &kp G                &kp H               &kp J   &kp K      &kp L           &kp SEMI  &kp APOS
-&kp LSHFT  &kp Z   &kp X     &kp C      &kp V         &kp B                &kp N               &kp M   &kp COMMA  &QUESTION_MARK  &kp FSLH  &tog 8
-                   &kp LEFT  &kp RIGHT                                                                 &kp DOWN   &kp UP
-                                        &kp LEFT_ALT  &trans     &kp H     &trans              &trans  &trans
-                                        &trans        &kp LCTRL  &trans    &HOME_FROM_SHIFTED  &trans  &tog 5
+&kp ESC    &kp N1  &kp N2    &kp N3     &kp N4        &kp N5              &kp N6  &kp N7  &kp N8     &kp N9          &kp N0    &trans
+&kp TAB    &kp Q   &kp W     &kp E      &kp R         &kp T               &kp Y   &kp U   &kp I      &kp O           &kp P     &GG_WP
+&kp CAPS   &kp A   &kp S     &kp D      &kp F         &kp G               &kp H   &kp J   &kp K      &kp L           &kp SEMI  &kp APOS
+&kp LSHFT  &kp Z   &kp X     &kp C      &kp V         &kp B               &kp N   &kp M   &kp COMMA  &QUESTION_MARK  &kp FSLH  &to 0
+                   &kp LEFT  &kp RIGHT                                                    &kp DOWN   &kp UP
+                                        &kp LEFT_ALT  &trans     &kp H    &trans  &trans  &trans
+                                        &trans        &kp LCTRL  &kp Y    &trans  &trans  &trans
             >;
         };
 
         zeri {
             bindings = <
-&kp ESC    &kp N1  &kp N2    &kp N3     &kp N4     &kp N5                  &kp N6              &kp N7  &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp TAB    &kp R   &kp W     &kp E      &kp Q      &kp T                   &kp Y               &kp U   &kp I      &kp O    &kp P     &kp LBKT
-&kp CAPS   &kp A   &kp S     &kp D      &kp F      &kp G                   &kp H               &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
-&kp LSHFT  &kp Z   &kp X     &kp C      &kp V      &kp B                   &kp N               &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                   &kp LEFT  &kp RIGHT                                                                 &kp DOWN   &kp UP
-                                        &kp LALT   &kp LSHFT  &kp GRAVE    &trans              &trans  &trans
-                                        &kp LCTRL  &kp SPACE  &kp BSPC     &HOME_FROM_SHIFTED  &trans  &tog 6
+&kp ESC    &kp N1  &kp N2    &kp N3     &kp N4    &kp N5              &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB    &kp R   &kp W     &kp E      &kp Q     &kp T               &kp Y   &kp U   &kp I      &kp O    &kp P     &kp LBKT
+&kp CAPS   &kp A   &kp S     &kp D      &kp F     &kp G               &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
+&kp LSHFT  &kp Z   &kp X     &kp C      &kp V     &kp B               &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &to 0
+                   &kp LEFT  &kp RIGHT                                                &kp DOWN   &kp UP
+                                        &kp LALT  &trans     &kp H    &trans  &trans  &trans
+                                        &trans    &kp LCTRL  &kp Y    &trans  &trans  &trans
             >;
         };
 
@@ -492,27 +523,27 @@
             >;
         };
 
-        layer_8 {
+        Runescape {
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3  &kp N4    &kp N5            &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp GRAVE  &kp Q   &kp W   &kp E   &kp R     &kp T             &kp Y   &kp U      &kp I      &kp O    &kp P     &kp LBKT
-&kp TAB    &kp A   &kp S   &kp D   &kp F     &kp G             &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
-&kp BSLH   &kp Z   &kp X   &kp C   &kp V     &kp B             &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4    &kp N5            &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp F1     &kp Q   &kp W   &kp E   &kp R     &kp T             &kp Y   &kp U      &kp I      &kp O    &kp P     &kp LBKT
+&kp PIPE   &kp A   &kp S   &kp D   &kp F     &kp G             &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
+&kp BSLH   &kp Z   &kp X   &kp C   &kp V     &kp B             &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &to 0
                    &trans  &trans                                                 &trans     &trans
                                    &trans    &trans  &trans    &trans  &trans     &trans
                                    &kp BSPC  &mo 9   &trans    &trans  &kp SPACE  &trans
             >;
         };
 
-        layer_9 {
+        Runescape_shifted {
             bindings = <
-&trans  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0              &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp Y   &kp U   &kp I      &kp O    &kp P               &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp H   &kp J   &kp K      &kp L    &kp SEMI            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH            &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans                                                  &trans  &trans
-                                   &trans   &trans    &trans    &trans  &trans  &trans
-                                   &trans   &trans    &trans    &trans  &trans  &trans
+&kp ESC  &kp N6  &kp N7  &kp N8     &kp N9   &kp N0              &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &kp Y   &kp U   &kp I      &kp O    &kp P               &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &kp H   &kp J   &kp K      &kp L    &kp SEMI            &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH            &trans  &trans  &trans  &trans  &trans  &trans
+                 &trans  &trans                                                  &trans  &trans
+                                    &trans   &trans    &trans    &trans  &trans  &trans
+                                    &trans   &trans    &trans    &trans  &trans  &trans
             >;
         };
 
@@ -552,8 +583,6 @@
 
     scroller {
         layers = <1>;
-        input-processors =
-            <&zip_xy_scaler 1 60>,
-            <&zip_xy_to_scroll_mapper>;
+        input-processors = <&zip_xy_scaler 1 60>, <&zip_xy_to_scroll_mapper>;
     };
 };
