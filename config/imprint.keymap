@@ -429,7 +429,7 @@
     #binding-cells = <0>;
     bindings = 
         <&kp LC(D) &kp LC(S) &kp LC(E)>,
-        <&macro_wait_time 300>,
+        <&macro_wait_time 3000>,
         <&kp LC(R)>,
         <&macro_wait_time 5>;
     label = "ROAR_SPEC_MACRO";
