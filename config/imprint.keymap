@@ -548,12 +548,12 @@
 // right hand trackball configuration
 
 &trackball_peripheral_listener {
-    input-processors = <&zip_xy_scaler 1 1>;
+    input-processors = <&zip_xy_scaler 1 2>;
 
     scroller {
         layers = <1>;
         input-processors =
-            <&zip_xy_scaler 1 40>,
+            <&zip_xy_scaler 1 60>,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
     };
