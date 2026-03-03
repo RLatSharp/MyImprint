@@ -437,6 +437,20 @@
             label = "EZK_SPEC_MACRO";
             wait-ms = <5>;
         };
+
+        roar_spec_macro: roar_spec_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LC(D) &kp LC(S)>,
+                <&macro_wait_time 300>,
+                <&kp LC(E)>,
+                <&macro_wait_time 5>,
+                <&kp LC(R)>;
+
+            label = "ROAR_SPEC_MACRO";
+            wait-ms = <5>;
+        };
     };
 
     keymap {
