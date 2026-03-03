@@ -89,7 +89,7 @@
         };
 
         German_Chars {
-            bindings = <&sl 11>;
+            bindings = <&sl 10>;
             key-positions = <59 62>;
         };
 
@@ -289,7 +289,7 @@
         ALT_TAB: ALT_TAB {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt LEFT_ALT &kp TAB &to 7>;
+            bindings = <&kt LEFT_ALT &kp TAB &to 6>;
             label = "ALT_TAB";
             wait-ms = <40>;
         };
@@ -335,14 +335,14 @@
         GAMING_LAYER: GAMING_LAYER {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(180,94,1) &rgb_ug RGB_EFF &tog 4>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(180,94,1) &rgb_ug RGB_EFF &tog 3>;
             label = "GAMING_LAYER";
         };
 
         GAMING_LAYER_NONSHIFT: GAMING_LAYER_NONSHIFT {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_EFF &tog 5>;
+            bindings = <&rgb_ug RGB_EFF &tog 4>;
             label = "GAMING_LAYER_NONSHIFT";
         };
 
@@ -459,7 +459,7 @@
 &kp F12  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                   &kp F6          &kp F7          &kp F8        &kp F9     &kp F10  &kp F11
 &to 0    &trans  &kp N7  &kp N8  &kp N9  &trans                   &trans          &kp HOME        &kp UP        &kp END    &trans   &trans
 &trans   &trans  &kp N4  &kp N5  &kp N6  &kp LA(LS(R))            &kp LEFT_ARROW  &kp DOWN        &kp UP_ARROW  &kp RIGHT  &trans   &trans
-&trans   &trans  &kp N1  &kp N2  &kp N3  &kp LA(LS(S))            &tog 2          &tog 4          &tog 5        &tog 6     &tog 8   &trans
+&trans   &trans  &kp N1  &kp N2  &kp N3  &kp LA(LS(S))            &tog 2          &tog 3          &tog 4        &tog 5     &tog 7   &trans
                  &trans  &kp N0                                                                   &trans        &trans
                                  &trans  &trans         &trans    &trans          &kp LG(LC(F4))  &trans
                                  &trans  &trans         &to 0     &trans          &trans          &trans
@@ -475,18 +475,6 @@
                            &trans        &trans                                                                                 &trans           &trans
                                                        &trans        &trans          &trans    &trans          &trans           &trans
                                                        &trans        &trans          &trans    &trans          &trans           &trans
-            >;
-        };
-
-        Auto_Mouse_Layer {
-            bindings = <
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-                &trans     &trans                                                  &trans  &trans
-                                      &trans     &trans  &trans    &trans  &trans  &trans
-                                      &trans     &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -546,7 +534,7 @@
 &kp BSLH          &kp Z   &kp X             &kp C              &kp V     &DISRUPTION_SHIELD               &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &to 0
                           &kp LEFT_BRACKET  &kp RIGHT_BRACKET                                                                &trans     &trans
                                                                &trans    &trans              &kp LC(I)    &trans  &trans     &trans
-                                                               &kp BSPC  &mo 9               &kp LC(U)    &trans  &kp SPACE  &trans
+                                                               &kp BSPC  &mo 8               &kp LC(U)    &trans  &kp SPACE  &trans
             >;
         };
 
@@ -582,7 +570,7 @@
 &trans  &trans           &trans          &trans  &trans  &trans            &trans  &trans           &trans  &trans           &trans  &trans
                          &trans          &trans                                                     &trans  &trans
                                                  &trans  &trans  &trans    &trans  &trans           &trans
-                                                 &trans  &sl 12  &trans    &trans  &trans           &trans
+                                                 &trans  &sl 11  &trans    &trans  &trans           &trans
             >;
         };
 
@@ -595,6 +583,18 @@
                    &trans    &trans                                               &trans  &trans
                                      &trans  &trans  &trans    &trans  &trans     &trans
                                      &trans  &trans  &trans    &trans  &trans     &trans
+            >;
+        };
+
+        Auto_Mouse_Layer {
+            bindings = <
+&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
+                &trans     &trans                                                  &trans  &trans
+                                      &trans     &trans  &trans    &trans  &trans  &trans
+                                      &trans     &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
