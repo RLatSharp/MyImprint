@@ -428,7 +428,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LC(F) &kp LC(G) &kp LC(Q) &kp LC(W) &kp LC(P) &kp LC(NON_US_BACKSLASH)>,
+                <&kp LC(F) &kp LC(G) &kp LC(Q) &kp LC(W) &kp LC(P) &kp I>,
                 <&macro_wait_time 300>,
                 <&kp LC(E)>,
                 <&macro_wait_time 5>,
