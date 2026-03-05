@@ -89,7 +89,7 @@
         };
 
         German_Chars {
-            bindings = <&sl 10>;
+            bindings = <&sl 11>;
             key-positions = <59 62>;
         };
 
@@ -283,6 +283,26 @@
             #binding-cells = <0>;
             bindings = <&kp B>, <&disruption_shield_macro>;
         };
+
+        dual_wield_hold_tap: dual_wield_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "DUAL_WIELD_HOLD_TAP";
+            bindings = <&mo>, <&dual_weild_macro>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            flavor = "balanced";
+        };
+
+        Two_handed_hold_tap: Two_handed_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TWO_HANDED_HOLD_TAP";
+            bindings = <&mo>, <&two_handed_macro>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            flavor = "balanced";
+        };
     };
 
     macros {
@@ -424,32 +444,18 @@
             wait-ms = <5>;
         };
 
-        ezk_spec_macro: ezk_spec_macro {
+        dual_weild_macro: dual_weild_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&kp LC(F) &kp LC(G) &kp LC(Q) &kp LC(W) &kp LC(P) &kp I>,
-                <&macro_wait_time 300>,
-                <&kp LC(E)>,
-                <&macro_wait_time 5>,
-                <&kp LC(A) &kp LC(S) &kp LC(D) &kp LC(F) &kp LC(G) &kp LC(R)>;
-
-            label = "EZK_SPEC_MACRO";
-            wait-ms = <5>;
+            bindings = <&kp N9 &kp N0 &tog 8>;
+            label = "DUAL_WEILD_MACRO";
         };
 
-        roar_spec_macro: roar_spec_macro {
+        two_handed_macro: two_handed_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&kp LC(D) &kp LC(S)>,
-                <&macro_wait_time 300>,
-                <&kp LC(E)>,
-                <&macro_wait_time 5>,
-                <&kp LC(R)>;
-
-            label = "ROAR_SPEC_MACRO";
-            wait-ms = <5>;
+            bindings = <&kp N8 &tog 8>;
+            label = "TWO_HANDED_MACRO";
         };
     };
 
@@ -542,25 +548,37 @@
 
         Runescape {
             bindings = <
-&kp GRAVE         &kp N1  &kp N2            &kp N3             &kp N4    &kp N5                           &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp TAB           &kp Q   &kp W             &kp E              &kp R     &kp T                            &kp Y   &kp U      &kp I      &kp O    &kp P     &kp LBKT
-&kp SINGLE_QUOTE  &kp A   &kp S             &kp D              &kp F     &kp G                            &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
-&kp BSLH          &kp Z   &kp X             &kp C              &kp V     &DISRUPTION_SHIELD               &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &to 0
-                          &kp LEFT_BRACKET  &kp RIGHT_BRACKET                                                                &trans     &trans
-                                                               &trans    &trans              &kp LC(I)    &trans  &trans     &trans
-                                                               &kp BSPC  &mo 8               &kp LC(U)    &trans  &kp SPACE  &trans
+&kp GRAVE         &kp N1  &kp N2            &kp N3             &kp N4    &kp N5                                 &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB           &kp Q   &kp W             &kp E              &kp R     &kp T                                  &kp Y   &kp U      &kp I      &kp O    &kp P     &kp LBKT
+&kp SINGLE_QUOTE  &kp A   &kp S             &kp D              &kp F     &kp G                                  &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
+&kp BSLH          &kp Z   &kp X             &kp C              &kp V     &DISRUPTION_SHIELD                     &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &to 0
+                          &kp LEFT_BRACKET  &kp RIGHT_BRACKET                                                                      &trans     &trans
+                                                               &kp N     &kp M                     &kp LC(I)    &trans  &trans     &trans
+                                                               &kp BSPC  &dual_wield_hold_tap 9 0  &kp LC(U)    &trans  &kp SPACE  &trans
+            >;
+        };
+
+        Weapon_Swap_Layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans                                                              &trans  &trans
+                                &trans  &trans                    &trans    &trans  &trans  &trans
+                                &trans  &Two_handed_hold_tap 9 0  &trans    &trans  &trans  &trans
             >;
         };
 
         Runescape_shifted {
             bindings = <
-&kp ESC               &kp LC(N1)  &kp LC(N2)        &kp LC(N3)       &kp LC(N4)  &kp LC(N5)            &trans  &trans  &trans  &trans  &trans  &trans
-&kp LC(TAB)           &kp LC(Q)   &kp LC(W)         &kp LC(E)        &kp LC(R)   &kp LC(T)             &trans  &trans  &trans  &trans  &trans  &trans
-&kp LC(SINGLE_QUOTE)  &kp LC(A)   &roar_spec_macro  &ezk_spec_macro  &kp LC(F)   &kp LC(G)             &trans  &trans  &trans  &trans  &trans  &trans
-&kp LC(BACKSLASH)     &kp LC(Z)   &kp LC(X)         &kp LC(C)        &kp LC(V)   &kp LC(B)             &trans  &trans  &trans  &trans  &trans  &trans
-                                  &trans            &trans                                                             &trans  &trans
-                                                                     &trans      &trans      &trans    &trans  &trans  &trans
-                                                                     &trans      &trans      &trans    &trans  &trans  &trans
+&kp ESC               &kp LC(N1)  &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)            &trans  &trans  &trans  &trans  &trans  &trans
+&kp LC(TAB)           &kp LC(Q)   &kp LC(W)   &kp LC(E)   &kp LC(R)   &kp LC(T)             &trans  &trans  &trans  &trans  &trans  &trans
+&kp LC(SINGLE_QUOTE)  &kp LC(A)   &kp LC(S)   &kp LC(D)   &kp LC(F)   &kp LC(G)             &trans  &trans  &trans  &trans  &trans  &trans
+&kp LC(BACKSLASH)     &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &kp LC(B)             &trans  &trans  &trans  &trans  &trans  &trans
+                                  &trans      &trans                                                        &trans  &trans
+                                                          &trans      &trans      &trans    &trans  &trans  &trans
+                                                          &trans      &trans      &trans    &trans  &trans  &trans
             >;
         };
 
@@ -584,7 +602,7 @@
 &trans  &trans           &trans          &trans  &trans  &trans            &trans  &trans           &trans  &trans           &trans  &trans
                          &trans          &trans                                                     &trans  &trans
                                                  &trans  &trans  &trans    &trans  &trans           &trans
-                                                 &trans  &sl 11  &trans    &trans  &trans           &trans
+                                                 &trans  &sl 12  &trans    &trans  &trans           &trans
             >;
         };
 
