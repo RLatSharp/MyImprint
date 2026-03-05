@@ -284,24 +284,18 @@
             bindings = <&kp B>, <&disruption_shield_macro>;
         };
 
-        dual_wield_hold_tap: dual_wield_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "DUAL_WIELD_HOLD_TAP";
-            bindings = <&mo>, <&dual_weild_macro>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            flavor = "balanced";
+        dual_wield_tap_dance: dual_wield_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DUAL_WIELD_TAP_DANCE";
+            #binding-cells = <0>;
+            bindings = <&mo 9>, <&dual_weild_macro>;
         };
 
-        Two_handed_hold_tap: Two_handed_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TWO_HANDED_HOLD_TAP";
-            bindings = <&mo>, <&two_handed_macro>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            flavor = "balanced";
+        two_hand_tap_dance: two_hand_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TWO_HAND_TAP_DANCE";
+            #binding-cells = <0>;
+            bindings = <&mo 9>, <&two_handed_macro>;
         };
     };
 
@@ -548,25 +542,25 @@
 
         Runescape {
             bindings = <
-&kp GRAVE         &kp N1  &kp N2            &kp N3             &kp N4    &kp N5                                 &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp TAB           &kp Q   &kp W             &kp E              &kp R     &kp T                                  &kp Y   &kp U      &kp I      &kp O    &kp P     &kp LBKT
-&kp SINGLE_QUOTE  &kp A   &kp S             &kp D              &kp F     &kp G                                  &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
-&kp BSLH          &kp Z   &kp X             &kp C              &kp V     &DISRUPTION_SHIELD                     &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &to 0
-                          &kp LEFT_BRACKET  &kp RIGHT_BRACKET                                                                      &trans     &trans
-                                                               &kp N     &kp M                     &kp LC(I)    &trans  &trans     &trans
-                                                               &kp BSPC  &dual_wield_hold_tap 9 0  &kp LC(U)    &trans  &kp SPACE  &trans
+&kp GRAVE         &kp N1  &kp N2            &kp N3             &kp N4    &kp N5                              &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB           &kp Q   &kp W             &kp E              &kp R     &kp T                               &kp Y   &kp U      &kp I      &kp O    &kp P     &kp LBKT
+&kp SINGLE_QUOTE  &kp A   &kp S             &kp D              &kp F     &kp G                               &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
+&kp BSLH          &kp Z   &kp X             &kp C              &kp V     &DISRUPTION_SHIELD                  &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &to 0
+                          &kp LEFT_BRACKET  &kp RIGHT_BRACKET                                                                   &trans     &trans
+                                                               &kp N     &kp M                  &kp LC(I)    &trans  &trans     &trans
+                                                               &kp BSPC  &dual_wield_tap_dance  &kp LC(U)    &trans  &kp SPACE  &trans
             >;
         };
 
         Weapon_Swap_Layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans                                                              &trans  &trans
-                                &trans  &trans                    &trans    &trans  &trans  &trans
-                                &trans  &Two_handed_hold_tap 9 0  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans                                                         &trans  &trans
+                                &trans  &trans               &trans    &trans  &trans  &trans
+                                &trans  &two_hand_tap_dance  &trans    &trans  &trans  &trans
             >;
         };
 
