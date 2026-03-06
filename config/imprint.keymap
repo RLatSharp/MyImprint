@@ -295,6 +295,8 @@
             label = "DUAL_WIELD_TAP_DANCE";
             #binding-cells = <0>;
             bindings = <&mo 10>, <&dual_weild_macro>;
+
+            tapping-term-ms = <300>;
         };
 
         two_hand_tap_dance: two_hand_tap_dance {
@@ -302,6 +304,8 @@
             label = "TWO_HAND_TAP_DANCE";
             #binding-cells = <0>;
             bindings = <&mo 10>, <&two_handed_macro>;
+
+            tapping-term-ms = <300>;
         };
     };
 
