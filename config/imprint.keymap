@@ -605,13 +605,13 @@
 
         layer_10 {
             bindings = <
-&trans  &trans           &trans          &trans  &trans  &trans            &trans  &trans           &trans  &trans           &trans  &trans
-&trans  &trans           &trans          &trans  &trans  &trans            &trans  &u_umlaut_lower  &trans  &o_umlaut_lower  &trans  &trans
-&trans  &a_umlaut_lower  &s_sharp_lower  &trans  &trans  &trans            &trans  &trans           &trans  &trans           &trans  &trans
-&trans  &trans           &trans          &trans  &trans  &trans            &trans  &trans           &trans  &trans           &trans  &trans
-                         &trans          &trans                                                     &trans  &trans
-                                                 &trans  &trans  &trans    &trans  &trans           &trans
-                                                 &trans  &sl 12  &trans    &trans  &trans           &trans
+&trans  &trans     &trans     &trans  &trans  &kp RA(NUMBER_5)            &trans  &trans     &trans  &trans     &trans  &trans
+&trans  &trans     &trans     &trans  &trans  &trans                      &trans  &kp RA(U)  &trans  &kp RA(O)  &trans  &trans
+&trans  &kp RA(A)  &kp RA(S)  &trans  &trans  &trans                      &trans  &trans     &trans  &trans     &trans  &trans
+&trans  &trans     &trans     &trans  &trans  &trans                      &trans  &trans     &trans  &trans     &trans  &trans
+                   &trans     &trans                                                         &trans  &trans
+                                      &trans  &trans            &trans    &trans  &trans     &trans
+                                      &trans  &trans            &trans    &trans  &trans     &trans
             >;
         };
 
