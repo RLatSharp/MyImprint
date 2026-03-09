@@ -103,6 +103,11 @@
             bindings = <&kp DELETE>;
             key-positions = <58 59>;
         };
+
+        KP_SHIFT_ENTER {
+            bindings = <&kp LS(KP_ENTER)>;
+            key-positions = <45 46>;
+        };
     };
 
     behaviors {
