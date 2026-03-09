@@ -611,7 +611,7 @@
 &trans  &trans     &trans     &trans  &trans  &trans                      &trans  &trans     &trans  &trans     &trans  &trans
                    &trans     &trans                                                         &trans  &trans
                                       &trans  &trans            &trans    &trans  &trans     &trans
-                                      &trans  &trans            &trans    &trans  &trans     &trans
+                                      &trans  &sk LEFT_SHIFT    &trans    &trans  &trans     &trans
             >;
         };
 
