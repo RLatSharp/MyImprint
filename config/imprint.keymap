@@ -410,7 +410,7 @@
 &kp F12  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5            &kp F6          &kp F7          &kp F8        &kp F9     &kp F10  &kp F11
 &trans   &trans  &kp N7  &kp N8  &kp N9  &trans            &trans          &kp HOME        &kp UP        &kp END    &trans   &trans
 &trans   &trans  &kp N4  &kp N5  &kp N6  &trans            &kp LEFT_ARROW  &kp DOWN        &kp UP_ARROW  &kp RIGHT  &trans   &trans
-&trans   &trans  &kp N1  &kp N2  &kp N3  &trans            &tog 3          &tog 4          &tog 5        &tog 6     &tog 8   &tog 1
+&trans   &trans  &kp N1  &kp N2  &kp N3  &trans            &tog 3          &tog 4          &tog 5        &tog 6     &trans   &tog 1
                  &trans  &kp N0                                                            &trans        &trans
                                  &trans  &trans  &trans    &trans          &kp LG(LC(F4))  &trans
                                  &trans  &trans  &trans    &trans          &trans          &trans
@@ -479,25 +479,25 @@
 
         Runescape {
             bindings = <
-&kp GRAVE         &kp N1  &kp N2            &kp N3             &kp N4    &kp N5                              &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp TAB           &kp Q   &kp W             &kp E              &kp R     &kp T                               &kp Y   &kp U      &kp I      &kp O    &kp P     &kp LBKT
-&kp SINGLE_QUOTE  &kp A   &kp S             &kp D              &kp F     &kp G                               &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
-&kp BSLH          &kp Z   &kp X             &kp C              &kp V     &DISRUPTION_SHIELD                  &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &to 0
-                          &kp LEFT_BRACKET  &kp RIGHT_BRACKET                                                                   &trans     &trans
-                                                               &kp N     &kp M                  &kp LC(I)    &trans  &trans     &trans
-                                                               &kp BSPC  &dual_wield_tap_dance  &kp LC(U)    &trans  &kp SPACE  &trans
+&kp GRAVE         &kp N1  &kp N2            &kp N3             &kp N4    &kp N5               &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB           &kp Q   &kp W             &kp E              &kp R     &kp T                &kp Y   &kp U      &kp I      &kp O    &kp P     &kp LBKT
+&kp SINGLE_QUOTE  &kp A   &kp S             &kp D              &kp F     &kp G                &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
+&kp BSLH          &kp Z   &kp X             &kp C              &kp V     &trans               &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &to 0
+                          &kp LEFT_BRACKET  &kp RIGHT_BRACKET                                                    &trans     &trans
+                                                               &kp N     &kp M   &kp LC(I)    &trans  &trans     &trans
+                                                               &kp BSPC  &trans  &kp LC(U)    &trans  &kp SPACE  &trans
             >;
         };
 
         Weapon_Swap_Layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans                                                         &trans  &trans
-                                &trans  &trans               &trans    &trans  &trans  &trans
-                                &trans  &two_hand_tap_dance  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans                                            &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
