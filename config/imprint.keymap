@@ -263,6 +263,8 @@
             label = "QUESTION_MARK";
             #binding-cells = <0>;
             bindings = <&SCREAMING_PERIOD EXCL PERIOD>, <&kp QUESTION>;
+
+            tapping-term-ms = <250>;
         };
 
         Z_Undo: Z_Undo {
