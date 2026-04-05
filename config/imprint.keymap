@@ -539,7 +539,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &none
                 &trans  &trans                                                         &trans  &trans
                                 &trans  &trans  &kp TAB                &trans  &trans  &trans
                                 &trans  &trans  &ctrl_tab_close_mac    &trans  &trans  &trans
