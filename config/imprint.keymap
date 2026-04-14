@@ -283,7 +283,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "QUOTE_TAP";
             #binding-cells = <0>;
-            bindings = <&GRAVE_SYMBOL GRAVE SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
+            bindings = <&kp SINGLE_QUOTE>, <&GRAVE_SYMBOL GRAVE DOUBLE_QUOTES>;
         };
 
         Caps_Word_tapdance: Caps_Word_tapdance {
