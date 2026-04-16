@@ -107,7 +107,7 @@
         };
 
         KP_SHIFT_ENTER {
-            bindings = <&kp LS(KP_ENTER)>;
+            bindings = <&kp LS(RET)>;
             key-positions = <45 46>;
         };
 
