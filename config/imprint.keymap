@@ -345,7 +345,7 @@
         HOME_LAYER: HOME_LAYER {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(0,0,1) &to 0 &rgb_ug RGB_EFR>;
+            bindings = <&to 0>;
             label = "HOME_LAYER";
         };
 
@@ -356,12 +356,10 @@
                 <&macro_press>,
                 <&mo 2>,
                 <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(128,1,1)>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&mo 2>,
-                <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(0,0,1)>;
+                <&macro_tap>;
 
             label = "MOD_LAYER";
         };
