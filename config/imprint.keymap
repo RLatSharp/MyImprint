@@ -498,9 +498,9 @@
 &kp TAB           &kp Y         &kp U             &kp I              &kp O       &kp P                       &kp Y   &kp U      &kp I      &kp O    &kp P     &kp LBKT
 &kp SINGLE_QUOTE  &kp H         &kp J             &kp K              &kp L       &kp SEMICOLON               &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
 &kp BSLH          &kp N         &kp M             &kp COMMA          &kp PERIOD  &kp SLASH                   &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &to 0
-                                &kp LEFT_BRACKET  &kp RIGHT_BRACKET                                                             &kp        &kp
-                                                                     &kp N       &kp M          &kp LC(I)    &kp     &kp        &kp
-                                                                     &kp BSPC    &kp            &kp LC(U)    &kp     &kp SPACE  &kp
+                                &kp LEFT_BRACKET  &kp RIGHT_BRACKET                                                             &trans     &trans
+                                                                     &kp N       &kp M          &kp LC(I)    &trans  &trans     &trans
+                                                                     &kp BSPC    &trans         &kp LC(U)    &trans  &kp SPACE  &trans
             >;
         };
 
